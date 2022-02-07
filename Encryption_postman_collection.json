@@ -302,12 +302,12 @@
 					"formdata": [
 						{
 							"key": "filepath",
-							"value": "C:\\Users\\geoman\\Videos\\Repos\\EncryptionService\\",
+							"value": "C:\\Users\\geoman\\Videos\\Repos\\EncryptionService\\shared_folder\\",
 							"type": "text"
 						},
 						{
 							"key": "filename",
-							"value": "environment.yml",
+							"value": "testfile.yml",
 							"type": "text"
 						}
 					]
@@ -484,7 +484,7 @@
 					"formdata": [
 						{
 							"key": "filepath",
-							"value": "C:\\Users\\geoman\\Videos\\Repos\\EncryptionService\\",
+							"value": "/home/docker_conda_template/shared_folder/",
 							"type": "text"
 						},
 						{
@@ -494,7 +494,7 @@
 						},
 						{
 							"key": "key",
-							"value": "f3-BtahPkdJS68ajrdewwLCXWIPGx31hg8Kuvf2AS8c=",
+							"value": "vneH9hwGJICCnbD4tBrElxOFNlgyZDzD46aYQpDwdnM=",
 							"type": "text"
 						},
 						{

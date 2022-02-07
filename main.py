@@ -112,6 +112,10 @@ def encrypt_file():
             return Response('{"error":"Filename and path must be provided"}',
                             status=422,
                             mimetype='application/json')
+        if ('shared_folder' not in file_path):
+            return Response('{"error":"File must be in shared folder directory"}',
+                            status=422,
+                            mimetype='application/json')
         # check if enough memory to read the file
         check_memory_requirement(file_path+file_name)
         # if there is no abort read the file
