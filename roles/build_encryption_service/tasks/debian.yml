@@ -1,0 +1,9 @@
+---
+  - name: "Build encryption server image"
+    docker_image:
+      name: "{{ encryption_service_name }}"
+      path: "."
+      state: present
+    become: true
+    become_method: sudo
+    tags: ["encryption_image"]

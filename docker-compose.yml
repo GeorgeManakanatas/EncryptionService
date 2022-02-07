@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+  encryption_service:
+    build: .
+    image: 'encryption_service_image:latest'
+    container_name: encryption_service
+    restart: always
+    ports:
+      - '5000:5000'

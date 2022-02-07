@@ -1,0 +1,549 @@
+{
+	"info": {
+		"_postman_id": "ec701eb5-901d-4ed7-bb64-d000ee8af5f1",
+		"name": "Encryption collection",
+		"description": "Encryption flask microservice collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "service check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/check",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"check"
+					]
+				},
+				"description": "sanity heck for server"
+			},
+			"response": []
+		},
+		{
+			"name": "get encrypt data simple",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/encrypt-data/simple",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"encrypt-data",
+						"simple"
+					]
+				},
+				"description": "sanity ckeck for encrypt data"
+			},
+			"response": []
+		},
+		{
+			"name": "get encrypt data shamir",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/encrypt-data/shamir",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"encrypt-data",
+						"shamir"
+					]
+				},
+				"description": "sanity ckeck for encrypt data shamir"
+			},
+			"response": []
+		},
+		{
+			"name": "get decrypt data simple",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/decrypt-data/simple",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"decrypt-data",
+						"simple"
+					]
+				},
+				"description": "sanity ckeck for decrypt data simple"
+			},
+			"response": []
+		},
+		{
+			"name": "get decrypt data shamir",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/decrypt-data/shamir",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"decrypt-data",
+						"shamir"
+					]
+				},
+				"description": "sanity ckeck for decrypt data shamir"
+			},
+			"response": []
+		},
+		{
+			"name": "get encrypt file",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/encrypt-file",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"encrypt-file"
+					]
+				},
+				"description": "sanity ckeck for encrypt file"
+			},
+			"response": []
+		},
+		{
+			"name": "get decrypt file",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/encrypt-file",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"encrypt-file"
+					]
+				},
+				"description": "sanity ckeck for decrypt file"
+			},
+			"response": []
+		},
+		{
+			"name": "encrypt data simple",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "justSOMEdataTOEncrypt",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/encrypt-data/simple",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"encrypt-data",
+						"simple"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "justAkey",
+							"disabled": true
+						},
+						{
+							"key": "method",
+							"value": "justSOMEmethod",
+							"disabled": true
+						},
+						{
+							"key": "data",
+							"value": "justSOMEdataTOencrypt",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Send string or binary to be encrypted. \n\nResponse is the encrypted string and the key used"
+			},
+			"response": []
+		},
+		{
+			"name": "encrypt data shamir",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "justSOMEdataTOEncrypt",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/encrypt-data/shamir?keys_min=5&keys_all=9",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"encrypt-data",
+						"shamir"
+					],
+					"query": [
+						{
+							"key": "keys_min",
+							"value": "5"
+						},
+						{
+							"key": "keys_all",
+							"value": "9"
+						},
+						{
+							"key": "data",
+							"value": "justSOMEdataTOencrypt",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Send string or binary to be encrypted. pass number of keys as parameter\n\nResponse is the encrypted string and the keys used"
+			},
+			"response": []
+		},
+		{
+			"name": "encrypt file",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "filepath",
+							"value": "C:\\Users\\geoman\\Videos\\Repos\\EncryptionService\\",
+							"type": "text"
+						},
+						{
+							"key": "filename",
+							"value": "environment.yml",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/encrypt-file",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"encrypt-file"
+					]
+				},
+				"description": "Encrypt a file. Send the path to the file and file name, response is the key and encrypted file location."
+			},
+			"response": []
+		},
+		{
+			"name": "decrypt data simple",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "gAAAAABh4XVmB140W1QRi3Ol7-MFhRlZh7_AoKA_BAiMZElFrQl9fCDQdBacHlc9sU9taJVQQKYm5-m5fqzzlqcGPmQFd5ZzJriZv55zBmW4_lh2t1DAaB4=",
+							"type": "text"
+						},
+						{
+							"key": "key",
+							"value": "ZrfNkXwPVFJgxi3wm_S395ecp-ZpK1OCxjGYpKVdOUo=",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/decrypt-data/simple",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"decrypt-data",
+						"simple"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "justAkey",
+							"disabled": true
+						},
+						{
+							"key": "method",
+							"value": "justSOMEmethod",
+							"disabled": true
+						},
+						{
+							"key": "data",
+							"value": "justSOMEdataTOencrypt",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Decrypt data. Input is the token and the key output is the decrypted data.\n"
+			},
+			"response": []
+		},
+		{
+			"name": "decrypt data shamir",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "gAAAAABeOr6znWFAoKjsHieVC3M2RzEw1K4yeei5F6qDnxGF-U0y_AbQKkmx0cO89Q3LCYE0l21do_5r8N6FUdatQbrVyk300TgRliSGBV39xs2zxHb_6Tw=",
+							"type": "text"
+						},
+						{
+							"key": "salt",
+							"value": "zrgtyYszv1HoWY9aMYCb6w==",
+							"type": "text"
+						},
+						{
+							"key": "shares",
+							"value": "[\n        [\n            1,\n            75039101737887228246916049195651638814\n        ],\n        [\n            2,\n            158724033046574339322876373621247930840\n        ],\n        [\n            3,\n            14971184502183456422356762822324686656\n        ],\n        [\n            4,\n            108238927797014560975848092881831921645\n        ],\n        [\n            5,\n            138646295858363261215075402310887599763\n        ],\n        [\n            6,\n            62820083611336182563121714344082267901\n        ],\n        [\n            7,\n            93894847978850967634428036939479055885\n        ]\n]",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "88625367931410377073614344447659360953",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/decrypt-data/shamir",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"decrypt-data",
+						"shamir"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "justAkey",
+							"disabled": true
+						},
+						{
+							"key": "method",
+							"value": "justSOMEmethod",
+							"disabled": true
+						},
+						{
+							"key": "data",
+							"value": "justSOMEdataTOencrypt",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Decrypt data with shamir secret sharing. Provided are the\ndata: to be decrypted\nshares: to recover the secret\nsalt: needd to get the hash of the secret"
+			},
+			"response": []
+		},
+		{
+			"name": "decrypt file",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "filepath",
+							"value": "C:\\Users\\geoman\\Videos\\Repos\\EncryptionService\\",
+							"type": "text"
+						},
+						{
+							"key": "filename",
+							"value": "encFile.txt",
+							"type": "text"
+						},
+						{
+							"key": "key",
+							"value": "f3-BtahPkdJS68ajrdewwLCXWIPGx31hg8Kuvf2AS8c=",
+							"type": "text"
+						},
+						{
+							"key": "finalname",
+							"value": "environment.yml",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/decrypt-file",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"decrypt-file"
+					]
+				},
+				"description": "Decrypt a file. Send the path to the file and the file name, response is the dencrypted file location."
+			},
+			"response": []
+		},
+		{
+			"name": "run tests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/tests",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"tests"
+					]
+				},
+				"description": "Runs unit tests and return output"
+			},
+			"response": []
+		}
+	]
+}
